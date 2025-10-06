@@ -224,6 +224,7 @@ class Polyline extends EventEmitter<{
   addPolyPoint(relX: number, relY: number, refPoint: EnvelopePoint) {
     const { svg } = this
     const { width, height } = svg.viewBox.baseVal
+    console.log(width, height)
     const x = relX * width
     const y = height - relY * height
     const threshold = this.options.dragPointSize / 2

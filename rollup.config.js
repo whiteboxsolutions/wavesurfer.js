@@ -58,7 +58,7 @@ export default [
       {
         input: plugin,
         output: {
-          file: plugin.replace('src/', 'dist/').replace('.ts', '.js'),
+          file: plugin.replace('src/plugins', 'dist/plugins').replace('.ts', '.js'),
           format: 'esm',
         },
         plugins,
@@ -67,7 +67,7 @@ export default [
       {
         input: plugin,
         output: {
-          file: plugin.replace('src/', 'dist/').replace('.ts', '.esm.js'),
+          file: plugin.replace('src/plugins', 'dist/plugins').replace('.ts', '.esm.js'),
           format: 'esm',
         },
         plugins,
@@ -77,7 +77,7 @@ export default [
         input: plugin,
         output: {
           name: plugin.replace('src/plugins/', '').replace('.ts', ''),
-          file: plugin.replace('src/', 'dist/').replace('.ts', '.cjs'),
+          file: plugin.replace('src/plugins', 'dist/plugins').replace('.ts', '.cjs'),
           format: 'cjs',
           exports: 'default',
         },
@@ -91,7 +91,7 @@ export default [
             .replace('src/plugins/', '')
             .replace('.ts', '')
             .replace(/^./, (c) => `WaveSurfer.${c.toUpperCase()}`),
-          file: plugin.replace('src/', 'dist/').replace('.ts', '.min.js'),
+          file: plugin.replace('src/plugins', 'dist/plugins').replace('.ts', '.min.js'),
           format: 'umd',
           extend: true,
           globals: {
